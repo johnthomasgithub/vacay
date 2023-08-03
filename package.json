@@ -1,6 +1,5 @@
 {
-  "homepage": "http://johnthomasgithub.github.io/webpack",
-  "name": "webpack",
+  "name": "vacay",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
