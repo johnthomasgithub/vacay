@@ -29,6 +29,7 @@ function App() {
   ];
 
   const handleShowPopUp = (identifier: string | boolean, id?: any) => {
+    //function to decide the popup's purpose
     if (identifier === "Add") {
       setPopUpConfig(configData[0]);
       setShowPopUp(true);
@@ -44,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <Toaster message={"john"} />
+      <Toaster />
       {showPopUp && (
         <Popup popConfig={popConfig} setShowPopUp={handleShowPopUp} />
       )}

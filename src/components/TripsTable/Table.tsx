@@ -14,7 +14,7 @@ import { showToaster } from "../../features/toaster/toasterSlice";
 interface Props {
   planner: object[];
   setShowPopUp: Function;
-}
+} //defining the type of the props
 
 const Table = (props: Props) => {
   const dispatch = useDispatch();
@@ -27,11 +27,12 @@ const Table = (props: Props) => {
       console.log("called null");
       dispatch(showToaster(null));
     }, 3000);
-  };
+  }; //function to delete the plan with id
   return (
     <div className="table__parent">
       {props.planner.length > 0 ? (
         props.planner.map((trip: any, index: number) => {
+          //mapping the plans
           return (
             <div key={trip.id} className="table_row">
               <div className="row__item">

@@ -67,7 +67,7 @@ const initialState = {
       description: "Bike ride on beach road",
     },
   ],
-};
+}; //initial state of the reducer
 
 export const plannerSlice = createSlice({
   name: "planner",
@@ -76,13 +76,13 @@ export const plannerSlice = createSlice({
     addPlan: (state, action) => {
       action.payload.id = state.planArr.length + 1;
       state.planArr.push(action.payload);
-    },
+    }, //reducer to add plans into the existing state
     updatePlan: (state, action) => {
       state.planArr = action.payload;
-    },
+    }, //reducer to update the plans to the existing stae
     deletePlan: (state, action) => {
       state.planArr = action.payload;
-    },
+    }, //reducer to delete the plans to the existing stae
   },
 });
 

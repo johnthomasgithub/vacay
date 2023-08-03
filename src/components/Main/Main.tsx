@@ -34,6 +34,7 @@ const MainButton = styled.button`
     padding: 6px 15px;
   }
 `;
+//styings for the main CTA
 
 const Main = (props: Props) => {
   return (

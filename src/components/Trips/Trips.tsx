@@ -6,7 +6,8 @@ import Table from "../TripsTable/Table";
 
 interface Props {
   setShowPopUp: Function;
-}
+} //defining the type of the props
+
 const Trips = (props: Props) => {
   const planner = useSelector((state: any) => state.planner.planArr);
 

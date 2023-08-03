@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Toaster.scss";
 import { useSelector } from "react-redux";
 var timer: any;
-const Toaster = ({ message }: { message: any }) => {
+const Toaster = () => {
   const toaster: any = useSelector((state: any) => state.toaster.showToaster);
-
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     if (toaster != null) {
