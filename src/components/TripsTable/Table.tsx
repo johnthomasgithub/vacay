@@ -5,19 +5,18 @@ import Description from "../../assets/description.svg";
 import Location from "../../assets/loc.svg";
 import Delete from "../../assets/delete.svg";
 import View from "../../assets/view.svg";
+import Title from "../../assets/title.svg";
 
 import { deletePlan } from "../../features/plan/PlanSlice";
 import { useSelector, useDispatch } from "react-redux";
-import toggleToaster from "../../utils/toggleToaster";
 import { showToaster } from "../../features/toaster/toasterSlice";
 
-const Table = ({
-  planner,
-  setShowPopUp,
-}: {
+interface Props {
   planner: object[];
   setShowPopUp: Function;
-}) => {
+}
+
+const Table = (props: Props) => {
   const dispatch = useDispatch();
   const planArr: any = useSelector((state: any) => state.planner.planArr);
   const handleDelete = (id: any) => {
@@ -31,10 +30,16 @@ const Table = ({
   };
   return (
     <div className="table__parent">
-      {planner.length > 0 ? (
-        planner.map((trip: any, index: number) => {
+      {props.planner.length > 0 ? (
+        props.planner.map((trip: any, index: number) => {
           return (
             <div key={trip.id} className="table_row">
+              <div className="row__item">
+                <div className="row1">
+                  <img src={Title}></img> <span>Title</span>
+                </div>{" "}
+                <div className="val-title">{trip.title}</div>
+              </div>
               <div className="row__item">
                 <div className="row1">
                   <img src={Startdate}></img> <span>Start</span>
@@ -67,7 +72,7 @@ const Table = ({
                     title="View or Update"
                     src={View}
                     onClick={() => {
-                      setShowPopUp("update", trip.id);
+                      props.setShowPopUp("update", trip.id);
                     }}
                   ></img>
                   <img

@@ -3,7 +3,11 @@ import "./Trips.scss";
 import { useSelector } from "react-redux";
 import Tripsbg from "../../assets/travel-02.jpg";
 import Table from "../TripsTable/Table";
-const Trips = ({ setShowPopUp }: { setShowPopUp: Function }) => {
+
+interface Props {
+  setShowPopUp: Function;
+}
+const Trips = (props: Props) => {
   const planner = useSelector((state: any) => state.planner.planArr);
 
   return (
@@ -13,18 +17,11 @@ const Trips = ({ setShowPopUp }: { setShowPopUp: Function }) => {
       className="trips__parent"
     >
       <div className="trips__title">Organizing Your Planned Trips</div>
-      {/* <button
-        onClick={() => {
-          setShowPopUp("update");
-        }}
-      >
-        button
-      </button> */}
       <div
         className="table"
         style={{ flex: planner.length < 5 ? "unset" : "1" }}
       >
-        <Table planner={planner} setShowPopUp={setShowPopUp} />
+        <Table planner={planner} setShowPopUp={props.setShowPopUp} />
       </div>
     </section>
   );

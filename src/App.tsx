@@ -13,6 +13,7 @@ function App() {
     { url: "#main", title: "Home" },
     { url: "#trips", title: "Trips" },
   ];
+
   const configData = [
     {
       purpose: "Add",

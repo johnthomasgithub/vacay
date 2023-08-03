@@ -3,6 +3,9 @@ import "./Main.scss";
 import styled, { keyframes } from "styled-components";
 import Mainbg from "../../assets/travel-01.jpg";
 
+interface Props {
+  setShowPopUp: Function;
+}
 const beatAnimation = keyframes`
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
@@ -32,7 +35,7 @@ const MainButton = styled.button`
   }
 `;
 
-const Main = ({ setShowPopUp }: { setShowPopUp: Function }) => {
+const Main = (props: Props) => {
   return (
     <section
       id="main"
@@ -41,7 +44,9 @@ const Main = ({ setShowPopUp }: { setShowPopUp: Function }) => {
     >
       <div className="main__title">Travel made simple</div>
       <div className="main__button__parent">
-        <MainButton onClick={() => setShowPopUp("Add")}>Create Plan</MainButton>
+        <MainButton onClick={() => props.setShowPopUp("Add")}>
+          Create Plan
+        </MainButton>
       </div>
     </section>
   );
