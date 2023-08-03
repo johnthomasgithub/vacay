@@ -1,0 +1,154 @@
+.trips__parent {
+  height: 100vh;
+  // background: url("../../assets/travel-02.jpg");
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px 50px 50px 50px;
+
+  .trips__title {
+    text-align: center;
+    color: white;
+    font-size: 64px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 15px;
+  }
+
+  .table {
+    flex: 1;
+    max-height: 80%;
+    padding: 15px;
+    border-radius: 8px;
+    background: linear-gradient(#f2f5f7b3, #eaecf5bd);
+    .table__parent {
+      display: flex;
+      max-height: 100%;
+      overflow: auto;
+      flex-direction: column;
+      gap: 15px;
+      padding: 5px 5px 9px 8px;
+
+      .table-error {
+        font-size: 30px;
+        font-weight: 600;
+        color: black;
+      }
+
+      .table_row {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        border-left: 2px solid #22368a;
+        gap: 5px;
+        padding: 15px;
+        box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+        flex-wrap: wrap;
+
+        .row__item {
+          border-right: 1px solid #efefef;
+          padding: 6px 15px 6px 15px;
+          color: #22368a;
+          font-weight: 600;
+          white-space: nowrap;
+          text-align: center;
+          font-size: 15px;
+          display: flex;
+          // flex: 1;
+          align-items: center;
+          flex-direction: column;
+          gap: 14px;
+
+          .val {
+            // font-size: 12px;
+            max-width: 88px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+          }
+
+          .vald {
+            width: 170px;
+            min-width: 150px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+          }
+
+          .row1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          &.menu {
+            background-color: #ce4646;
+            color: white;
+            padding: 5px 10px 5px 10px;
+            text-align: center;
+            margin: auto;
+            cursor: pointer;
+            position: relative;
+            border-radius: 8px;
+
+            .option_buttons {
+              position: absolute;
+              display: flex;
+              flex-direction: row;
+              gap: 5px;
+              justify-content: center;
+              align-items: center;
+              display: none;
+              width: 69px;
+              justify-content: space-evenly;
+              background-color: #ce4646;
+              opacity: 0; /* Start with opacity 0 for the transition effect */
+              transition: opacity 0.3s ease; /* Define the transition effect for opacity */
+              .delete {
+                height: 18px !important;
+                width: 18px !important;
+              }
+              img {
+                height: 14px;
+                width: 14px;
+              }
+            }
+
+            &:hover {
+              .option_buttons {
+                display: flex;
+                opacity: 1;
+              }
+            }
+          }
+          &.desc {
+            // max-width: 199px;
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // display: inline-block;
+          }
+          img {
+            height: 20px;
+            width: 19px;
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .trips__parent .table .table__parent .table_row {
+    flex-direction: column;
+  }
+  .trips__parent .trips__title {
+    font-size: 25px;
+  }
+}

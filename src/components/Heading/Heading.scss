@@ -1,0 +1,11 @@
+.heading_parent {
+  font-weight: 600;
+  font-size: 20px;
+  color: #22368a;
+
+  &.bigger {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+}
