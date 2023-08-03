@@ -1,6 +1,6 @@
 # Trip Plan Application (Vacay)
 
-![Banner Image](<img src="https://github.com/johnthomasgithub/vacay/blob/main/vacaybanner.png" alt="Banner Image" width="600" height="300">)
+![Banner Image](https://github.com/johnthomasgithub/vacay/blob/main/vacaybanner.png)
 
 
 ## Introduction
