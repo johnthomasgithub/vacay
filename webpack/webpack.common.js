@@ -23,7 +23,7 @@ module.exports = {
       //   use: [MiniCssExtractPlugin.loader, 'css-loader'],
       // },
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         // type: 'asset/resource',
         use: {
           loader: "file-loader",
@@ -36,6 +36,13 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: { name: "assets/[name][hash].[ext]" },
+        },
+      },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: "svg-url-loader",
+          options: { limit: 10000, name: "assets/[name][hash].[ext]" },
         },
       },
     ],
